@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>GrowQazaqstan</title>
+
+  <style>
+    body {
+      background-color: gold;
+      color: blue;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    .section {
+      display: none; /* hidden by default */
+    }
+
+    .active {
+      display: block; /* show the active page */
+    }
+
+    button {
+      padding: 15px 40px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: crimson;
+      color: white;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: gold;
+      color: black;
+    }
+
+    input, textarea {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #555;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- MAIN PAGE -->
+<div id="mainPage" class="section active">
+  <h1>Welcome to GrowQazaqstan</h1>
+  <h2>What do you need help with?</h2>
+
+  <!-- BUTTON to Feedback Page -->
+  <button onclick="showFeedback()">Go to Feedback</button>
+</div>
+
+<!-- FEEDBACK PAGE -->
+<div id="Feedback" class="section">
+  <h1>Contact Me</h1>
+
+  <form>
+    <label>Your Name:</label><br>
+    <input type="text" placeholder="Enter your name"><br>
+
+    <label>Email:</label><br>
+    <input type="email" placeholder="example@email.com"><br>
+
+    <label>Message:</label><br>
+    <textarea placeholder="Write your message here..." rows="5"></textarea><br>
+
+    <button type="submit">Send</button>
+  </form>
+
+  <button onclick="showMain()">Back to Main</button>
+</div>
+
+<script>
+  function showFeedback() {
+    document.getElementById("mainPage").classList.remove("active");
+    document.getElementById("Feedback").classList.add("active");
+  }
+
+  function showMain() {
+    document.getElementById("Feedback").classList.remove("active");
+    document.getElementById("mainPage").classList.add("active");
+  }
+</script>
+
+</body>
+</html>
+
+  
